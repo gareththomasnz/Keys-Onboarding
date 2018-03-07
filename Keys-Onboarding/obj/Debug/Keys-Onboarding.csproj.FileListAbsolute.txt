@@ -66,6 +66,5 @@ c:\users\owner\documents\visual studio 2017\Projects\Keys-Onboarding\Keys-Onboar
 c:\users\owner\documents\visual studio 2017\Projects\Keys-Onboarding\Keys-Onboarding\bin\Microsoft.AI.ServerTelemetryChannel.xml
 c:\users\owner\documents\visual studio 2017\Projects\Keys-Onboarding\Keys-Onboarding\bin\Microsoft.AI.WindowsServer.xml
 c:\users\owner\documents\visual studio 2017\Projects\Keys-Onboarding\Keys-Onboarding\bin\Microsoft.AI.Web.xml
-c:\users\owner\documents\visual studio 2017\Projects\Keys-Onboarding\Keys-Onboarding\obj\Debug\Keys-Onboarding.csprojResolveAssemblyReference.cache
 c:\users\owner\documents\visual studio 2017\Projects\Keys-Onboarding\Keys-Onboarding\obj\Debug\Keys-Onboarding.dll
 c:\users\owner\documents\visual studio 2017\Projects\Keys-Onboarding\Keys-Onboarding\obj\Debug\Keys-Onboarding.pdb

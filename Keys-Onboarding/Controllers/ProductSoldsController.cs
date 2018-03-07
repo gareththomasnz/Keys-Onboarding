@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Keys_Onboarding.Models;
 
-namespace Keys_Onboarding.Views
+namespace Keys_Onboarding.Controllers
 {
     public class ProductSoldsController : Controller
     {
