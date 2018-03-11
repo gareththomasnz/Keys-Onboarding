@@ -19,9 +19,11 @@ namespace Keys_Onboarding.Models
     
         public int Id { get; set; }
         [Required]
+        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "Only use English Alphabet Characters Please")]
         [Display(Name = "Customer Name")]
         public string Name { get; set; }
         [Required]
+        [RegularExpression("^[a-zA-Z0-9 ]*$", ErrorMessage = "Only use English Alphabet Characters & Numbers Please")]
         [Display(Name = "Customer Address")]
         public string Address { get; set; }
     

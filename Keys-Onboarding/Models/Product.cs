@@ -19,6 +19,7 @@ namespace Keys_Onboarding.Models
     
         public int Id { get; set; }
         [Required]
+        [RegularExpression("^[a-zA-Z0-9 ]*$", ErrorMessage = "Only use English Alphabet Characters & Numbers Please")]
         [Display(Name = "Product Name")]
         public string Name { get; set; }
         [Required]
