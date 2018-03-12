@@ -30,11 +30,54 @@
             @Html.DisplayFor(modelItem => item.Address)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary" })
-            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-success" })
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+            <a class="btn btn-primary btnEdit" data-toggle="modal" data-id="@item.Id" href="#modalContainer">Edit</a>
+            <a class="btn btn-success btnDetail" data-toggle="modal" data-id="@item.Id" href="#modalContainer">Details</a>
+            <a class="btn btn-danger btnDelete" data-toggle="modal" data-id="@item.Id" href="#modalContainer">Delete</a>
         </td>
     </tr>
 }
 
 </table>
+
+
+<div id="modalContainer" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="mod-content">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+
+
+        $("#btnCreate").click(function (event) {
+            $(".mod-content").load("/Stores/Create");
+        })
+
+        $(".btnEdit").click(function (event) {
+            console.log("button clicked");
+            $(".mod-content").load("/Stores/Edit/" + $(this).data("id"));
+            console.log($(this).data("id"));
+        });
+
+
+        $(".btnDetail").click(function (event) {
+            console.log("button clicked");
+            var Id = $(this).data("data-id")
+            $(".mod-content").load("/Stores/Details/" + $(this).data("id"));
+            console.log($(this).data("id"));
+        });
+
+        $(".btnDelete").click(function (event) {
+            console.log("button clicked");
+            var Id = $(this).data("data-id")
+            $(".mod-content").load("/Stores/Delete/" + $(this).data("id"));
+            console.log($(this).data("id"));
+        });
+    </script>
+}
