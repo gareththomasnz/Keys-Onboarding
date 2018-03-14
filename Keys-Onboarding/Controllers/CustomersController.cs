@@ -32,13 +32,13 @@ namespace Keys_Onboarding.Controllers
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return PartialView(customer);
         }
 
         // GET: Customers/Create
         public ActionResult Create()
         {
-            return View();
+            return PartialView();
         }
 
         // POST: Customers/Create
@@ -69,7 +69,7 @@ namespace Keys_Onboarding.Controllers
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return PartialView(customer);
         }
 
         // POST: Customers/Edit/5
@@ -100,7 +100,7 @@ namespace Keys_Onboarding.Controllers
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return PartialView(customer);
         }
 
         // POST: Customers/Delete/5

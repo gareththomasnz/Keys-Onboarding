@@ -33,7 +33,7 @@ namespace Keys_Onboarding.Controllers
             {
                 return HttpNotFound();
             }
-            return View(productSold);
+            return PartialView(productSold);
         }
 
         // GET: ProductSolds/Create
@@ -42,7 +42,7 @@ namespace Keys_Onboarding.Controllers
             ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Name");
             ViewBag.ProductId = new SelectList(db.Products, "Id", "Name");
             ViewBag.StoreId = new SelectList(db.Stores, "Id", "Name");
-            return View();
+            return PartialView();
         }
 
         // POST: ProductSolds/Create
@@ -99,7 +99,7 @@ namespace Keys_Onboarding.Controllers
             ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Name", productSold.CustomerId);
             ViewBag.ProductId = new SelectList(db.Products, "Id", "Name", productSold.ProductId);
             ViewBag.StoreId = new SelectList(db.Stores, "Id", "Name", productSold.StoreId);
-            return View(productSold);
+            return PartialView(productSold);
         }
 
         // GET: ProductSolds/Delete/5
@@ -114,7 +114,7 @@ namespace Keys_Onboarding.Controllers
             {
                 return HttpNotFound();
             }
-            return View(productSold);
+            return PartialView(productSold);
         }
 
         // POST: ProductSolds/Delete/5

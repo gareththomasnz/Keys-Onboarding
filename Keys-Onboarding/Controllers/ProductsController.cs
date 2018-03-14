@@ -32,7 +32,7 @@ namespace Keys_Onboarding.Controllers
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return PartialView(product);
         }
 
         // GET: Products/Create
@@ -55,7 +55,7 @@ namespace Keys_Onboarding.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(product);
+            return PartialView(product);
         }
 
         // GET: Products/Edit/5
@@ -70,7 +70,7 @@ namespace Keys_Onboarding.Controllers
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return PartialView(product);
         }
 
         // POST: Products/Edit/5
@@ -101,7 +101,7 @@ namespace Keys_Onboarding.Controllers
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return PartialView(product);
         }
 
         // POST: Products/Delete/5

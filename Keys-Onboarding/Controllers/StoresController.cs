@@ -32,7 +32,7 @@ namespace Keys_Onboarding.Controllers
             {
                 return HttpNotFound();
             }
-            return View(store);
+            return PartialView(store);
         }
 
         // GET: Stores/Create
@@ -55,7 +55,7 @@ namespace Keys_Onboarding.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(store);
+            return PartialView(store);
         }
 
         // GET: Stores/Edit/5
@@ -70,7 +70,7 @@ namespace Keys_Onboarding.Controllers
             {
                 return HttpNotFound();
             }
-            return View(store);
+            return PartialView(store);
         }
 
         // POST: Stores/Edit/5
@@ -101,7 +101,7 @@ namespace Keys_Onboarding.Controllers
             {
                 return HttpNotFound();
             }
-            return View(store);
+            return PartialView(store);
         }
 
         // POST: Stores/Delete/5
