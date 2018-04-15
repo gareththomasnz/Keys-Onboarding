@@ -205,6 +205,10 @@
       <DependentUpon>Keys-Onboarding-Model.edmx</DependentUpon>
       <LastGenOutput>Keys-Onboarding-Model.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\app\Customer.js" />
+    <Content Include="Scripts\app\Product.js" />
+    <Content Include="Scripts\app\ProductSold.js" />
+    <Content Include="Scripts\app\Store.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
