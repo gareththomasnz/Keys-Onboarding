@@ -15,9 +15,23 @@ namespace Keys_Onboarding.Controllers
         private Entities db = new Entities();
 
         // GET: Products
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    return View(db.Products.ToList());           
+        //}
+        //Get product list
+        public JsonResult GetProductList()
         {
-            return View(db.Products.ToList());
+            //using (var db = new Entities())
+            {
+                var prodList = db.Products.Select(x => new ProductViewModel()
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Price = x.Price
+                }).ToList();
+                return Json(prodList, JsonRequestBehavior.AllowGet);
+            }
         }
 
         // GET: Products/Details/5

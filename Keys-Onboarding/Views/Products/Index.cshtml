@@ -20,21 +20,22 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            <a class="btn btn-primary btnEdit" data-toggle="modal" data-id="@item.Id" href="#modalContainer" >Edit</a>
-            <a class="btn btn-success btnDetail" data-toggle="modal" data-id="@item.Id" href="#modalContainer">Details</a>
-            <a class="btn btn-danger btnDelete" data-toggle="modal" data-id="@item.Id" href="#modalContainer">Delete</a>
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a class="btn btn-primary btnEdit" data-toggle="modal" data-id="@item.Id" href="#modalContainer">Edit</a>
+                <a class="btn btn-success btnDetail" data-toggle="modal" data-id="@item.Id" href="#modalContainer">Details</a>
+                <a class="btn btn-danger btnDelete" data-toggle="modal" data-id="@item.Id" href="#modalContainer">Delete</a>
+            </td>
+        </tr>
+    }
 
 </table>
 

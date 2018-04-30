@@ -15,9 +15,23 @@ namespace Keys_Onboarding.Controllers
         private Entities db = new Entities();
 
         // GET: Customers
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    return View(db.Customers.ToList());
+        //}
+
+        public JsonResult GetCustomerList()
         {
-            return View(db.Customers.ToList());
+            //using (var db = new OnBoardingV2DBContext())
+            {
+                var custList = db.Customers.Select(x => new CustomerViewModel()
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Address = x.Address
+                }).ToList();
+                return Json(custList, JsonRequestBehavior.AllowGet);
+            }
         }
 
         // GET: Customers/Details/5

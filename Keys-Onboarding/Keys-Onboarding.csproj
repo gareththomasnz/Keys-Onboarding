@@ -156,15 +156,11 @@
     <Compile Include="Models\Customer.cs">
       <DependentUpon>Keys-Onboarding-Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CustomerViewModel.cs" />
     <Compile Include="Models\Keys-Onboarding-Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Keys-Onboarding-Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Keys-Onboarding-Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Keys-Onboarding-Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Keys-Onboarding-Model.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -177,9 +173,11 @@
     <Compile Include="Models\ProductSold.cs">
       <DependentUpon>Keys-Onboarding-Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductViewModel.cs" />
     <Compile Include="Models\Store.cs">
       <DependentUpon>Keys-Onboarding-Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\StoreViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
