@@ -14,15 +14,11 @@ namespace Keys_Onboarding.Controllers
     {
         private Entities db = new Entities();
 
-        // GET: Products
-        //public ActionResult Index()
-        //{
-        //    return View(db.Products.ToList());           
-        //}
+
         //Get product list
-        public JsonResult GetProductList()
+        public JsonResult Index()
         {
-            //using (var db = new Entities())
+            using (var db = new Entities())
             {
                 var prodList = db.Products.Select(x => new ProductViewModel()
                 {
@@ -33,6 +29,12 @@ namespace Keys_Onboarding.Controllers
                 return Json(prodList, JsonRequestBehavior.AllowGet);
             }
         }
+
+        // GET: Products
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
 
         // GET: Products/Details/5
         public ActionResult Details(int? id)

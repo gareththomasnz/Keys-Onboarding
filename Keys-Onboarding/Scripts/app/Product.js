@@ -4,25 +4,25 @@ $(document).ready(function () {
     return false;
 });
 
-function loadCustList() {
-    $("#tblCustomer tbody tr").remove();
+function loadProdList() {
+    $(".table tbody tr").remove();
     $.ajax({
         type: 'POST',
-        url: "/Product/GetProductList",
+        url: "/Product/Index()",
         dataType: 'json',
         data: {},
         success: function (data) {
             var item = '';
             $.each(data, function (i, item) {
                 var rows = "<tr> " +
-                    "<td class='CustomerTableTD'>" + item.CustID + "</td>" +
-                    "<td class='CustomerTableTD'>" + item.CustName + "</td>" +
-                    "<td class='CustomerTableTD'>" + item.CustAddress + "</td>" +
-                    "<td class='CustomerTableTD'>" +
-                    "<button type='button' class='btn btn-info btn-sm' data-toggle='modal' data-target='#customerEditModal' data-dismiss='modal' onclick='funcEditCustomer(" + item.CustID + ")'>Edit</button>" +
-                    "<button type='button' class='btn btn-info btn-sm' data-toggle='modal' data-target='#customerDeleteModal' onclick='funcDeleteCustomer(" + item.CustID + ")'>Delete</button>" + "</td>" +
+                    "<td class='ProductTableTD'>" + item.Id + "</td>" +
+                    "<td class='ProductTableTD'>" + item.Name + "</td>" +
+                    "<td class='ProductTableTD'>" + item.Price + "</td>" +
+                    "<td class='ProductTableTD'>" +
+                    "<button type='button' class='btn btn-info btn-sm' data-toggle='modal' data-target='#customerEditModal' data-dismiss='modal' onclick='funcEditCustomer(" + item.Id + ")'>Edit</button>" +
+                    "<button type='button' class='btn btn-info btn-sm' data-toggle='modal' data-target='#customerDeleteModal' onclick='funcDeleteCustomer(" + item.Id + ")'>Delete</button>" + "</td>" +
                     "</tr>";
-                $('#tblCustomer tbody').append(rows);
+                $('.table tbody').append(rows);
             });
         },
         error: function (ex) {
