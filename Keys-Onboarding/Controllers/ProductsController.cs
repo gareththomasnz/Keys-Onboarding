@@ -16,7 +16,7 @@ namespace Keys_Onboarding.Controllers
 
 
         //Get product list
-        public JsonResult Index()
+        public JsonResult GetProductList()
         {
             using (var db = new Entities())
             {
@@ -30,11 +30,11 @@ namespace Keys_Onboarding.Controllers
             }
         }
 
-        // GET: Products
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+        //GET: Products
+        public ActionResult Index()
+        {
+            return View(db.Products.ToList());
+        }
 
         // GET: Products/Details/5
         public ActionResult Details(int? id)

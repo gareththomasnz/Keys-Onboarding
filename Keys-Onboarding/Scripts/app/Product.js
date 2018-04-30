@@ -1,6 +1,6 @@
 ﻿
 $(document).ready(function () {
-    loadCustList();
+    loadProdList();
     return false;
 });
 
@@ -8,7 +8,7 @@ function loadProdList() {
     $(".table tbody tr").remove();
     $.ajax({
         type: 'POST',
-        url: "/Product/Index()",
+        url: "/Product/GetProductList()",
         dataType: 'json',
         data: {},
         success: function (data) {
