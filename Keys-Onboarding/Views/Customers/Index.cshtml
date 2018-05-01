@@ -9,32 +9,11 @@
 <p>
     <a id="btnCreate" href="#modalContainer" data-toggle="modal" class="btn btn-success">Create New</a>
 </p>
+
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th></th>
+        @*JS fills this table using AJAX*@
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            <a class="btn btn-primary btnEdit" data-toggle="modal" data-id="@item.Id" href="#modalContainer">Edit</a>
-            <a class="btn btn-success btnDetail" data-toggle="modal" data-id="@item.Id" href="#modalContainer">Details</a>
-            <a class="btn btn-danger btnDelete" data-toggle="modal" data-id="@item.Id" href="#modalContainer">Delete</a>
-        </td>
-    </tr>
-}
 
 </table>
 

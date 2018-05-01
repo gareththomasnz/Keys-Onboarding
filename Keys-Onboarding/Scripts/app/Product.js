@@ -1,34 +1,41 @@
-﻿
-$(document).ready(function () {
+﻿$(document).ready(function () {
+    console.log("function start");
     loadProdList();
     return false;
 });
 
 function loadProdList() {
-    $(".table tbody tr").remove();
+    console.log("loadProdList start");
+    $(".table tr").remove();
+    console.log("table removed");
     $.ajax({
         type: 'POST',
-        url: "/Product/GetProductList()",
+        url: "/Products/GetProductList",
         dataType: 'json',
         data: {},
         success: function (data) {
-            var item = '';
+            console.log("ajax success");
+            var item = '';            
             $.each(data, function (i, item) {
+                console.log("each start");
                 var rows = "<tr> " +
                     "<td class='ProductTableTD'>" + item.Id + "</td>" +
                     "<td class='ProductTableTD'>" + item.Name + "</td>" +
                     "<td class='ProductTableTD'>" + item.Price + "</td>" +
                     "<td class='ProductTableTD'>" +
-                    "<button type='button' class='btn btn-info btn-sm' data-toggle='modal' data-target='#customerEditModal' data-dismiss='modal' onclick='funcEditCustomer(" + item.Id + ")'>Edit</button>" +
-                    "<button type='button' class='btn btn-info btn-sm' data-toggle='modal' data-target='#customerDeleteModal' onclick='funcDeleteCustomer(" + item.Id + ")'>Delete</button>" + "</td>" +
+                    "<button class='btn btn-primary btnEdit' data-toggle='modal' data-id= " + item.Id + " href='#modalContainer'>Edit</a>" +
+                    "<button class='btn btn-success btnDetail' data-toggle='modal' data-id= " + item.Id + " href='#modalContainer'>Detail</a>" +
+                    "<button class='btn btn-danger btnDelete' data-toggle='modal' data-id= " + item.Id + " href='#modalContainer'>Delete</a>" + "</td>" +
                     "</tr>";
                 $('.table tbody').append(rows);
             });
         },
-        error: function (ex) {
-            var r = jQuery.parseJSON(response.responseText);
-            alert("Message: " + r.Message);
+
+
+        error: function (req, err) {
+            console.log('Message: ' + err);
         }
+
     });
 }
 
@@ -46,18 +53,6 @@ $(".btnEdit").click(function (event) {
 
 $(".btnDetail").click(function (event) {
     console.log("button clicked");
-    //$.ajax({
-    //    type: "GET",
-    //    url: "/Products/Details/",
-    //    dataType: "json",
-
-    //    success: function (result) {
-    //        console.log("ok");
-    //    },
-    //    error: function (result) {
-    //        console.log("error");
-    //    }
-    //});
     $(".mod-content").load("/Products/Details/" + $(this).data("id"));
     console.log($(this).data("id"));
 });

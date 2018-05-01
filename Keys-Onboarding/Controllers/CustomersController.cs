@@ -14,15 +14,10 @@ namespace Keys_Onboarding.Controllers
     {
         private Entities db = new Entities();
 
-        // GET: Customers
-        //public ActionResult Index()
-        //{
-        //    return View(db.Customers.ToList());
-        //}
-
+        //Get customer list
         public JsonResult GetCustomerList()
         {
-            //using (var db = new OnBoardingV2DBContext())
+            using (var db = new Entities())
             {
                 var custList = db.Customers.Select(x => new CustomerViewModel()
                 {
@@ -32,6 +27,12 @@ namespace Keys_Onboarding.Controllers
                 }).ToList();
                 return Json(custList, JsonRequestBehavior.AllowGet);
             }
+        }
+
+        //GET: Customers
+        public ActionResult Index()
+        {
+            return View(db.Customers.ToList());
         }
 
         // GET: Customers/Details/5
